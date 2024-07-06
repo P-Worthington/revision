@@ -23,6 +23,7 @@
  * do while loops
  * controlling loop iteration
  * arrays
+ * objects / dictionaries
  */
 
 // print to console
@@ -174,3 +175,9 @@ myArray[0] // 'a'
 // there are a number of array mehtods
 // https://www.w3schools.com/jsref/jsref_obj_array.asp
 
+//objects / dictionaries
+let object = {
+    property1: value1,
+    property2: value2,
+    property3: value1,
+  }
