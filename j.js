@@ -24,6 +24,13 @@
  * controlling loop iteration
  * arrays
  * objects / dictionaries
+ * object methods
+ * this 
+ * functions 
+ * inbuilt functions 
+ * date function
+ * manipulating the DOM
+ * get
  */
 
 // print to console
@@ -177,7 +184,116 @@ myArray[0] // 'a'
 
 //objects / dictionaries
 let object = {
-    property1: value1,
-    property2: value2,
-    property3: value1,
+    property1: 1,
+    property2: 2,
+    property3: 3,
   }
+
+//object methods 
+//you can use the static methods Object.keys() and Object.values() 
+//to get the object's properties (keys) and values, respectively. 
+
+let car = {
+  location: 'garage',
+  ignition: 'off',
+  fueled: true,
+  start: function() {
+    this.ignition = 'on';
+  }
+};
+
+//console.log(car.ignition);
+//car.start();
+//console.log(car.ignition);
+
+//functions within the object can be declared to manipulate the object
+
+//this 
+//In the above code, this refers to the object it is a part of: the car. 
+//The this keyword has different meanings depending on the context in which 
+//it is used, but you'll most likely see it used in two main ways:
+
+// 1 // In a method, this refers to the object that owns the method. 
+//If the method isn't owned by any object, then this refers to the global object.
+
+// 2 // In an event (like when a user clicks on something), this refers to the 
+//element that received the event (e.g. the thing they clicked on).
+
+let car2 = {
+  location: 'garage',
+  ignition: 'off',
+  fueled: true,
+  start: function() {
+    this.ignition = 'on';
+  },
+  drive: function() {
+    this.location = 'street';
+  },
+  park: function() {
+    this.location = 'garage';
+  },
+  refuel: function() {
+    this.location = 'gas station';
+    this.fueled = true;
+  },
+  stop: function() {
+    this.ignition = 'off';
+  },
+};
+
+// Now we can "use" the car:
+//car.start();
+//console.log(car.ignition);
+//car.drive();
+//console.log(car.location);
+
+// Ran out of gas!
+///car.fueled = false;
+//car.refuel();
+//console.log(car.location);
+//console.log(car.fueled);
+
+// Let's go home
+//car.drive();
+//console.log(car.location);
+//car.park();
+//console.log(car.location);
+//car.stop();
+//console.log(car);
+
+// functions 
+function myFuncition (parameter) {
+  //do something 
+}
+
+//calling functions 
+// myFunction(a) 
+
+//inbuilt functions 
+//Math.PI: The constant pi
+//Math.random(): A method for returning a random number between 0 and 1
+//Math.abs(): A method for finding the absolute value of a number
+//Math.min(): A method for returning the minimum of a series of numbers
+//Math.max(): A method for returning the maximum of a series of numbers
+
+//date function
+today = new Date();
+
+// Now we can operate on it:
+//console.log(today.getFullYear());      // The 4 digit year
+//console.log(today.getMonth());         // The month (0-11)
+//console.log(today.getDate());          // The day of the month (1-31)
+//console.log(today.getDay());           // The day of the week (0-6)
+//console.log(today.getHours());         // The hour (0-23)
+//console.log(today.getMinutes());       // The minute (0-59)
+//console.log(today.getSeconds());       // The seconds (0-59)
+//console.log(today.getMilliseconds());  // The milliseconds (0-999)
+
+/**
+ * Manipulating the DOM
+ */
+
+// basic get 
+let q = document.getElementById('myID');
+
+// More complex DOM nagigation is best done using jQuery
